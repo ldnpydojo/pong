@@ -36,10 +36,10 @@ def update_paddle(paddle, up, down):
 def update_ball():
     if BALL.top <= 0:
         VELOCITY[1] = abs(VELOCITY[1])
-        sounds.boing2.play()
+        sounds.boing.play()
 
     if BALL.bottom >= HEIGHT:
-        sounds.boing2.play()
+        sounds.boing.play()
         VELOCITY[1] = -abs(VELOCITY[1])
 
     if BALL.left <= 0 or WIDTH <= BALL.right:
@@ -62,7 +62,7 @@ def update_score():
 
 def thwack(paddle):
     if BALL.colliderect(paddle):
-        sounds.thwack3.play()
+        sounds.thwack.play()
         VELOCITY[0] *= -1
         VELOCITY[1] = (BALL.centery - paddle.centery) / 6
 
